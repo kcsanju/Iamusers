@@ -1,0 +1,19 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  MyIAMUser:
+    Type: 'AWS::IAM::User'
+    Properties:
+      UserName: MyNewUser
+      # Optionally, you can specify additional IAM user properties here.
+      # For example, to add the user to a group or attach policies:
+      Groups:
+        - MyUserGroup
+      # Attach policies to the user (replace `MyPolicyArn` with the actual ARN of the policy):
+      # Policies:
+      #   - PolicyName: MyUserPolicy
+      #     PolicyDocument:
+      #       Version: '2012-10-17'
+      #       Statement:
+      #         - Effect: Allow
+      #           Action: 's3:GetObject'
+      #           Resource: 'arn:aws:s3:::my-bucket/*'
